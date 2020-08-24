@@ -7,6 +7,7 @@ const connection = require('./database')
 const bodyParser = require('body-parser')
 connection()
 
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/api', require('../routes/index'))
 

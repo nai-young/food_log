@@ -8,11 +8,18 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  Day.create({
-    date: new Date,
+  Day.collection.insertOne({
+    date: new Date(),
     exercise: req.body.exercise,
-    coffe: req.body.coffe
+    coffe: req.body.coffe,
+    water: req.body.water,
+    study: req.body.study,
+    work: req.body.work
   })
+  res.redirect('/api')
+})
+router.delete('/', (req, res) => {
+  Day.collection.deleteMany()
   res.redirect('/api')
 })
 

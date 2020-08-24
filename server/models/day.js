@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const daySchema = new mongoose.Schema({
   date: Date,
-  exercise: Boolean,
+  exercise: String,
   coffe: Number,
   water: Number,
   study: Number,
