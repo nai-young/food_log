@@ -1,0 +1,20 @@
+{
+  "name": "food_log",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "server": "nodemon server/config/server.js",
+    "client": "cd client && npm run start",
+    "dev": "concurrently --kill-others \"heroku local\" \"npm run start --prefix ./client\"",
+    "postinstall": "npm install --prefix ./server && npm install --prefix ./client && npm run build --prefix ./client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
